@@ -9,7 +9,7 @@ The following should get you started hacking:
 ```
 $ cp config/database.yml.example config/database.yml
 $ cp .env.example .env
-$ bundle install
+$ bundle install --without production
 $ rake db:create db:migrate db:seed
 $ foreman start
 ```
