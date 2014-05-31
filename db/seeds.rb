@@ -8,3 +8,17 @@
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 # Environment variables (ENV['...']) can be set in the file .env file.
+
+User.find_or_create_by!(email: 'mentor@email.com') do |user|
+        user.password = 'password'
+        user.password_confirmation = 'password'
+        user.role = :mentor
+        user.save!
+end
+
+User.find_or_create_by!(email: 'mentee@email.com') do |user|
+        user.password = 'password'
+        user.password_confirmation = 'password'
+        user.role = :mentee
+        user.save!
+end
