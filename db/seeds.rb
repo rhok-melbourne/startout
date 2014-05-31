@@ -9,14 +9,14 @@ user = CreateAdminService.new.call
 
 # Environment variables (ENV['...']) can be set in the file .env file.
 
-mentor = User.find_or_initialize_by!(email: 'mentor@email.com')
+mentor = User.where(email: 'mentor@email.com').first || User.new(email: 'mentor@email.com')
 mentor.name = 'Joe Mentor'
 mentor.password = 'password'
 mentor.password_confirmation = 'password'
 mentor.role = :mentor
 mentor.save!
 
-mentee = User.find_or_initialize_by!(email: 'mentee@email.com')
+mentee = User.where(email: 'mentee@email.com').first || User.new(email: 'mentee@email.com')
 mentee.name = 'Bobby Mentee'
 mentee.password = 'password'
 mentee.password_confirmation = 'password'
