@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140531050847) do
+ActiveRecord::Schema.define(version: 20140531082044) do
 
   create_table "entries", force: true do |t|
     t.integer  "relationship_id"
     t.integer  "author_id"
     t.string   "text"
     t.datetime "created_at"
+    t.string   "entry_type"
+    t.string   "question"
   end
 
   create_table "relationships", force: true do |t|
