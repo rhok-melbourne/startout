@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <h3>Relationships</h3>
+    <div class="column">
+      <table class="table">
+        <tbody>
+          <% @relationships.each do |relationship| %>
+            <tr>
+              <td><%= link_to(relationship.mentee.name, :controller => 'relationships', :action => 'show', :id => relationship.id) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
     self.role ||= :user
   end
 
+  def mentee_relationship
+    Relationship.find_by_mentee_id( self.id )
+  end
+
 end

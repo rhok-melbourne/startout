@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20140531050847) do
     t.integer  "relationship_id"
     t.integer  "author_id"
     t.string   "text"
-    t.datetime "created_at"
+    t.datetime "created_at",      default: '2014-05-31 11:51:59', null: false
   end
 
   create_table "relationships", force: true do |t|
