@@ -3,7 +3,6 @@ class RelationshipsController < ApplicationController
 
   def index
     @relationship = Relationship.first
-    puts "entries: #{@relationship.entries}"
   end
 
   private
