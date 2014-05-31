@@ -11,7 +11,7 @@ class AddRelationship < ActiveRecord::Migration
       t.belongs_to :relationship
       t.belongs_to :author
       t.string :text
-      t.datetime :created_at, :null => false, :default => Time.now
+      t.datetime :created_at
     end
 
   end

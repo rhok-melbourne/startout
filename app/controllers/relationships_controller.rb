@@ -8,7 +8,19 @@ class RelationshipsController < ApplicationController
 
   def create_entry
     relationship_id = Relationship.find_by_mentee_id( current_user.id ).id
-    entry = Entry.new(text: params[:text], author: current_user, relationship_id: relationship_id)
+    entry_type = params[:entry_type]
+    if entry_type == 'emoticon'
+      text = params[:emoticon]
+    else
+      text = params[:text]
+    end
+    entry = Entry.new(
+        author: current_user,
+        relationship_id: relationship_id,
+        text: text,
+        entry_type: entry_type,
+        question: params[:question]
+        )
     entry.save!
     redirect_to action: 'index'
   end
