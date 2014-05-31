@@ -23,10 +23,17 @@ mentee.password_confirmation = 'password'
 mentee.role = :mentee
 mentee.save!
 
-# relationship = Relationship.find_or_create_by!(mentor: mentor, mentee: mentee)
-relationship = Relationship.find_or_create_by!(mentor: mentor, mentee: mentee)
+mentee2 = User.where(email: 'mentee2@email.com').first || User.new(email: 'mentee2@email.com')
+mentee2.name = 'Frank Mentee'
+mentee2.password = 'password'
+mentee2.password_confirmation = 'password'
+mentee2.role = :mentee
+mentee2.save!
 
-relationship.entries << Entry.new(text: 'first mentor entry', author: mentor)
-relationship.entries << Entry.new(text: 'first mentee entry', author: mentee)
-relationship.entries << Entry.new(text: 'second mentor entry', author: mentor)
-relationship.entries << Entry.new(text: 'second mentee entry', author: mentee)
+relationship1 = Relationship.find_or_create_by!(mentor: mentor, mentee: mentee)
+relationship2 = Relationship.find_or_create_by!(mentor: mentor, mentee: mentee2)
+
+relationship1.entries << Entry.new(text: 'first mentor entry', author: mentor)
+relationship1.entries << Entry.new(text: 'first mentee entry', author: mentee)
+relationship1.entries << Entry.new(text: 'second mentor entry', author: mentor)
+relationship1.entries << Entry.new(text: 'second mentee entry', author: mentee)
