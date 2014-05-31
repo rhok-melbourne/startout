@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <h3>Feed</h3>
+    <div class="column">
+      <table class="table">
+        <tbody>
+          <% @relationship.entries.each do |entry| %>
+            <tr>
+              <td><%= entry.text %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
