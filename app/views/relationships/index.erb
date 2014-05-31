@@ -1,16 +1,22 @@
+
+
 <div class="container">
+  <% @relationship.entries.each do |entry| %>
   <div class="row">
-    <h3>Feed</h3>
-    <div class="column">
-      <table class="table">
-        <tbody>
-          <% @relationship.entries.each do |entry| %>
-            <tr>
-              <td><%= entry.text %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+    <div class="feed_entry_info col-xs-4 col-sm-2">
+      <div class="entry_avatar pull-left">
+        <img src="https://assets-cdn.github.com/images/modules/dashboard/bootcamp/octocat_fork.png?1a1dfcb9" alt="avatar image" class="img-circle img-responsive">
+      </div>
+      <div class="entry_author">
+        <%= entry.author.name %>
+      </div>
+    </div>
+
+    <div class="panel panel-default feed_entry col-xs-8 col-sm-10">
+      <div class="panel-body feed_body">
+        <%= entry.text %>
+      </div>
     </div>
   </div>
+  <% end %>
 </div>
