@@ -9,21 +9,19 @@ user = CreateAdminService.new.call
 
 # Environment variables (ENV['...']) can be set in the file .env file.
 
-mentor = User.find_or_initialize_by!(email: 'mentor@email.com') do |user|
-        user.name = 'Joe Mentor'
-        user.password = 'password'
-        user.password_confirmation = 'password'
-        user.role = :mentor
-        user.save!
-end
+mentor = User.find_or_initialize_by!(email: 'mentor@email.com')
+mentor.name = 'Joe Mentor'
+mentor.password = 'password'
+mentor.password_confirmation = 'password'
+mentor.role = :mentor
+mentor.save!
 
-mentee = User.find_or_initialize_by!(email: 'mentee@email.com') do |user|
-        user.name = 'Bobby Mentee'
-        user.password = 'password'
-        user.password_confirmation = 'password'
-        user.role = :mentee
-        user.save!
-end
+mentee = User.find_or_initialize_by!(email: 'mentee@email.com')
+mentee.name = 'Bobby Mentee'
+mentee.password = 'password'
+mentee.password_confirmation = 'password'
+mentee.role = :mentee
+mentee.save!
 
 # relationship = Relationship.find_or_create_by!(mentor: mentor, mentee: mentee)
 relationship = Relationship.find_or_create_by!(mentor: mentor, mentee: mentee)
