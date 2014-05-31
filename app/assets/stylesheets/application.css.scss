@@ -14,6 +14,27 @@
  *= require_self
  */
 
-body {
+html,body {
   height: 100%;
+}
+
+#carousel-emoticon .item{
+  font-size:8em;
+  text-align:center;
+}
+
+#carousel-question .item {
+  text-align:center;
+  font-size:2.5em;
+}
+
+#post-item {
+  background-color:#FFD602;
+  height:33%;
+}
+
+#post-item div {
+  height:100%;
+  text-align:center;
+  font-size:8em;
 }
