@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'relationships', to: 'relationships#list'
   get 'relationships/:id', to: 'relationships#show'
-  get 'relationships/:id/entry_new', to: 'relationships#entry_new'
+  #get 'relationships/:id/new', to: 'relationships#new'
   get ':controller(/:action(/:id))'
   # resources :users, :relationships
 

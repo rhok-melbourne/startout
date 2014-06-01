@@ -1,6 +1,10 @@
 class EntriesController < ApplicationController
   before_filter :authenticate_user!
 
+  def new
+    @relationship = Relationship.find(params[:relationship_id])
+  end
+
   def create
     Relationship.find(params[:relationship_id]).entries <<
               Entry.new(

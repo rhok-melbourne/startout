@@ -1,5 +1,8 @@
 <%# add navigation links to this file %>
 <% if user_signed_in? %>
+  <% if current_user.role.eql? "mentee" %>
+    <li><%= link_to "Feed", relationship_path(current_user.mentee_relationship) %></li>
+  <% end %>
   <li><%= link_to "#{current_user.name} (Sign out)", destroy_user_session_path, :method=>'delete' %></li>
 <% else %>
   <li><%= link_to 'Sign in', new_user_session_path %></li>
