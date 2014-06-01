@@ -34,7 +34,7 @@ img {
 // to make views framework-neutral
 main {
   @extend .container-fluid;
-  background-color: #F6006D;
+  background-color: white;
   padding-bottom: 80px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
