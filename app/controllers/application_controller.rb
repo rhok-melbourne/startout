@@ -26,4 +26,13 @@ class ApplicationController < ActionController::Base
   def allow_responsive_is_iframe
     response.headers['X-Frame-Options'] = 'ALLOW-FROM http://responsive.is/'
   end
+
+  def after_sign_in_path_for(resource)
+    case current_user.role
+    when 'mentee'
+      "/relationships/#{current_user.mentee_relationship.id}"
+    when 'mentor'
+      '/relationships'
+    end
+  end
 end
