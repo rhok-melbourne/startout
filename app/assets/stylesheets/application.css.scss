@@ -38,3 +38,40 @@ html,body {
   text-align:center;
   font-size:8em;
 }
+
+#carousel-emoticon .item {
+background-position:center;
+background-repeat:no-repeat;
+background-size: 90% 90%;
+}
+
+.angry {
+  background-image: url(image-path('angry_100x100.svg'));
+  background-color: #ED1B30;
+}
+.cheeky {
+  background-image: url(image-path('cheeky_100x100.svg'));
+  background-color: #EC008C;
+}
+
+.confused {
+  background-image: url(image-path('confused_100x100.svg'));
+  background-color: #F57F20;
+}
+.happy {
+  background-image: url(image-path('happy_100x100.svg'));
+  background-color: #FFE200;
+}
+
+.hmm {
+  background-image: url(image-path('hmm_100x100.svg'));
+  background-color: #C4D82D;
+}
+.meh {
+  background-image: url(image-path('meh_100x100.svg'));
+  background-color: #B7E1D7;
+}
+.sad {
+  background-image: url(image-path('sad_100x100.svg'));
+  background-color: #00AEEF;
+}
