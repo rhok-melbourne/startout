@@ -1,25 +1,26 @@
-  <% @relationship.entries.each do |entry| %>
-  <div class="row">
-    <div class="feed_entry_info col-xs-4 col-sm-2">
-      <div class="entry_avatar pull-left">
-        <img src="<%= image_path(entry.author.avatar_name) %>" alt="avatar image" class="img-circle img-responsive">
-      </div>
-      <div class="entry_author">
-        <%= entry.created_at.strftime('%A %d %B %Y') %>
-      </div>
-      <div class="entry_author">
-        <%= entry.author.name %>
+  <% @entries_by_date.each do |date, entries| %>
+    <div class="row">
+      <div class="feed_entry_info col-xs-8 col-sm-12" style="background-color:#eee">
+        <%= date %>
       </div>
     </div>
+    <% entries.each do |entry| %>
+    <div class="row">
+      <div class="feed_entry_info col-xs-2 col-sm-2">
+        <div class="entry_avatar pull-left">
+          <img src="<%= image_path(entry.author.avatar_name) %>" alt="avatar image" class="img-circle img-responsive">
+        </div>
+      </div>
 
-    <div class="panel panel-default feed_entry col-xs-8 col-sm-10">
+      <div class="panel panel-default feed_entry col-xs-8 col-sm-10">
 
-      <div class="panel-body feed_body">
-      <% if(entry.entry_type === 'emoticon') %>
-      <div class="<%= entry.emoticon %> emoticon pull-left" style="height:80px;width:80px;"></div>
-      <% end %>
-        <%= entry.text %>
+        <div class="panel-body feed_body">
+        <% if(entry.entry_type === 'emoticon') %>
+        <div class="<%= entry.emoticon %> emoticon pull-left" style="height:80px;width:80px;"></div>
+        <% end %>
+          <%= entry.text %>
+        </div>
       </div>
     </div>
-  </div>
+    <% end %>
   <% end %>

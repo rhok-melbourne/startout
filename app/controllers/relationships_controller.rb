@@ -30,7 +30,9 @@ class RelationshipsController < ApplicationController
   end
 
   def show
-    @relationship = Relationship.find(params[:id])
+    @entries_by_date = Relationship.find(params[:id]).entries.inject({}) { |r, e|
+      r[e.created_at.strftime("%A %d %B %Y")]||=[]; r[e.created_at.strftime("%A %d %B %Y")] << e; r
+    }
   end
 
 end

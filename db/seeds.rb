@@ -36,8 +36,8 @@ mentee2.save!
 relationship1 = Relationship.find_or_create_by!(mentor: mentor, mentee: mentee)
 relationship2 = Relationship.find_or_create_by!(mentor: mentor, mentee: mentee2)
 
-relationship1.entries << Entry.new(text: 'first mentor entry', author: mentor)
-relationship1.entries << Entry.new(text: 'first mentee entry', author: mentee)
+relationship1.entries << Entry.new(text: 'first mentor entry', author: mentor, created_at: Date.today - 2)
+relationship1.entries << Entry.new(text: 'first mentee entry', author: mentee, created_at: Date.today - 2)
 relationship1.entries << Entry.new(text: 'second mentor entry', author: mentor)
 relationship1.entries << Entry.new(text: 'second mentee entry', author: mentee)
 
