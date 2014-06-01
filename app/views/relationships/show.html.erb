@@ -1,6 +1,6 @@
   <% @entries_by_date.each do |date, entries| %>
     <div class="row">
-      <div class="feed_entry_info col-xs-8 col-sm-12" style="background-color:#eee">
+      <div class="feed_entry_info col-xs-12 col-sm-12" style="background-color:#404041;color:white;height:36px;">
         <%= date %>
       </div>
     </div>
@@ -12,16 +12,19 @@
         </div>
       </div>
 
-      <div class="panel panel-default feed_entry col-xs-8 col-sm-10">
+      <div class="panel panel-default feed_entry col-xs-9 col-sm-9">
 
         <div class="panel-body feed_body">
         <% if(entry.entry_type === 'emoticon') %>
-        <div class="<%= entry.emoticon %> emoticon pull-left" style="height:80px;width:80px;"></div>
+        <div class="<%= entry.emoticon %> emoticon pull-left" style="height:3em;width:3em;"></div>
         <% end %>
           <%= entry.text %>
         </div>
+        <% if(entry.comments.length > 0) %>
+        <label>Comments</label>
+        <% end %>
         <% entry.comments.each do |comment| %>
-        <div class="panel panel-default feed_entry col-xs-8 col-sm-10">
+        <div class="panel panel-default feed_entry col-xs-12 col-sm-12">
           <div class="panel-body feed_body">
             <%= comment.author.name %>: <%= comment.text %>
           </div>
