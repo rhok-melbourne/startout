@@ -15,3 +15,14 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+$(document).ready( function() {
+
+$('#carousel-emoticon .item').click(function() {
+  $('#emoticon-entry-icon').addClass($(this).data('emoticon')).addClass('emoticon');
+  $('#emoticon-entry[name=emoticon]').val($(this).data('emoticon'));
+  $('#main-menu').slideToggle("slow");
+  $('#emoticon-entry').slideToggle("slow");
+
+});
+});
