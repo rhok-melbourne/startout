@@ -20,7 +20,15 @@
         <% end %>
           <%= entry.text %>
         </div>
+        <% entry.comments.each do |comment| %>
+        <div class="panel panel-default feed_entry col-xs-8 col-sm-10">
+          <div class="panel-body feed_body">
+            <%= comment.text %>
+          </div>
+        </div>
+      <% end %>
       </div>
+
     </div>
     <% end %>
   <% end %>
