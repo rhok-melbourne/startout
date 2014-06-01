@@ -23,7 +23,7 @@
         <% entry.comments.each do |comment| %>
         <div class="panel panel-default feed_entry col-xs-8 col-sm-10">
           <div class="panel-body feed_body">
-            <%= comment.text %>
+            <%= comment.author.name %>: <%= comment.text %>
           </div>
         </div>
       <% end %>
