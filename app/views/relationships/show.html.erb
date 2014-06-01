@@ -22,7 +22,11 @@
     </div>
 
     <div class="panel panel-default feed_entry col-xs-8 col-sm-10">
+
       <div class="panel-body feed_body">
+      <% if(entry.entry_type === 'emoticon') %>
+      <div class="<%= entry.emoticon %> emoticon pull-left" style="height:80px;width:80px;"></div>
+      <% end %>
         <%= entry.text %>
       </div>
     </div>

@@ -25,6 +25,10 @@ class RelationshipsController < ApplicationController
     redirect_to action: 'index'
   end
 
+  def entry_new
+    @relationship = Relationship.find(params[:id])
+  end
+
   def show
     @relationship = Relationship.find(params[:id])
   end

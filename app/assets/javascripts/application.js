@@ -20,7 +20,7 @@ $(document).ready( function() {
 
 $('#carousel-emoticon .item').click(function() {
   $('#emoticon-entry-icon').addClass($(this).data('emoticon')).addClass('emoticon');
-  $('#emoticon-entry[name=emoticon]').val($(this).data('emoticon'));
+  $('#emoticon-entry-emoticon').val($(this).data('emoticon'));
   $('#main-menu').slideToggle("slow");
   $('#emoticon-entry').slideToggle("slow");
 
