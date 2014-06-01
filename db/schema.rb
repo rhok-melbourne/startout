@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140601001206) do
+ActiveRecord::Schema.define(version: 20140601003516) do
+
+  create_table "comments", force: true do |t|
+    t.integer  "entry_id"
+    t.integer  "relationship_id"
+    t.integer  "author_id"
+    t.datetime "created_at"
+    t.string   "text"
+    t.datetime "updated_at"
+  end
 
   create_table "entries", force: true do |t|
     t.integer  "relationship_id"

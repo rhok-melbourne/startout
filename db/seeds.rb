@@ -37,3 +37,7 @@ relationship1.entries << Entry.new(text: 'first mentor entry', author: mentor)
 relationship1.entries << Entry.new(text: 'first mentee entry', author: mentee)
 relationship1.entries << Entry.new(text: 'second mentor entry', author: mentor)
 relationship1.entries << Entry.new(text: 'second mentee entry', author: mentee)
+
+relationship1.entries.each do |entry|
+  entry.comments << Comment.new(text: 'first comment', author: mentor)
+end
