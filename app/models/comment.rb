@@ -1,7 +1,7 @@
-class Entry < ActiveRecord::Base
+class Comment < ActiveRecord::Base
 
+  belongs_to :entry, :class_name => "Entry", :foreign_key => "entry_id"
   belongs_to :author, :class_name => "User", :foreign_key => "author_id"
-  has_many :comments, -> { order "created_at DESC" }
 
   before_create :set_created_at_to_now
 
