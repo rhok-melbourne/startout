@@ -23,6 +23,10 @@ $('#carousel-emoticon .item').click(function() {
   $('#emoticon-entry-emoticon').val($(this).data('emoticon'));
   $('#main-menu').slideToggle("slow");
   $('#emoticon-entry').slideToggle("slow");
+});
 
+$('#post-item').click(function() {
+  $('#main-menu').slideToggle("slow");
+  $('#new-entry').slideToggle("slow");
 });
 });
