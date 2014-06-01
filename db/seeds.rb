@@ -36,17 +36,17 @@ mentee2.save!
 relationship1 = Relationship.find_or_create_by!(mentor: mentor, mentee: mentee)
 relationship2 = Relationship.find_or_create_by!(mentor: mentor, mentee: mentee2)
 
-entry1 = Entry.new(author: mentee, emoticon: 'sad', text: "I'm not feeling great. What are you up to?", created_at: Date.today - 2)
+entry1 = Entry.new(author: mentee, entry_type: 'emoticon', emoticon: 'sad', text: "I'm not feeling great. What are you up to?", created_at: Date.today - 2)
 entry1.comments << Comment.new(author: mentor, text: "What's going on?")
 entry1.comments << Comment.new(author: mentee, text: "I got bullied at school today by my classmates.")
 entry1.comments << Comment.new(author: mentor, text: "That sucks! I know how you feel, shall we talk about this in our next session?")
 
-entry2 = Entry.new(author: mentee, question: "What's been making you smile lately?!", text: "That boy I liked, said hello to me today!", created_at: Date.today - 1)
+entry2 = Entry.new(author: mentee, entry_type: 'question', question: "What's been making you smile lately?!", text: "That boy I liked, said hello to me today!", created_at: Date.today - 1)
 entry2.comments << Comment.new(author: mentor, text: "That's great!")
 entry2.comments << Comment.new(author: mentor, text: "The thing that made me smile this week is that my partner surprised me with a dinner.")
 entry2.comments << Comment.new(author: mentee, text: "Aw so happy for you!")
 
-entry3 = Entry.new(author: mentee, question: "How did you deal with people calling you names at school?", text: "I got punched in a corner today and yelled at and feel wrecked! Don't know how to handle this situations!")
+entry3 = Entry.new(author: mentee, entry_type: 'question', question: "How did you deal with people calling you names at school?", text: "I got punched in a corner today and yelled at and feel wrecked! Don't know how to handle this situations!")
 
 relationship1.entries << entry1
 relationship1.entries << entry2
