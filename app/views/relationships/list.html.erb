@@ -6,7 +6,10 @@
         <tbody>
           <% @relationships.each do |relationship| %>
             <tr>
-              <td><%= link_to(relationship.mentee.name, :controller => 'relationships', :action => 'show', :id => relationship.id) %></td>
+              <td>
+                <img src="<%= image_path(relationship.mentee.avatar_name) %>" alt="avatar image" class="img-responsive">
+              </td>
+              <td style="vertical-align:middle"><%= link_to(relationship.mentee.name, :controller => 'relationships', :action => 'show', :id => relationship.id) %></td>
             </tr>
           <% end %>
         </tbody>
