@@ -71,6 +71,9 @@ pickle-email-*.html
 # Textmate project files
 /*.tmproj
 
+# Aptana project files
+.project
+
 # vim artifacts
 **.swp
 
