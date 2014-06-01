@@ -6,7 +6,7 @@ class Entry < ActiveRecord::Base
   before_create :set_created_at_to_now
 
   def set_created_at_to_now
-    self.created_at = Time.now
+    self.created_at = Time.now if !self.created_at
   end
 
 end
